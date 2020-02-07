@@ -11,6 +11,7 @@ set wrap
 set cursorline
 set hlsearch
 set ignorecase
+set number
 
 execute "set <M-p>=\ep"
 nnoremap <M-p> :set invpaste paste?<CR> 
@@ -18,7 +19,8 @@ set pastetoggle=<M-p>
 set showmode
 
 map <F2> :retab <CR> :wq! <CR> 
-map <F6> :make <CR> 
+map <F6> :make <bar> !./app <CR> 
+map <F7> :make clean <CR> 
 nmap <C-s> :w<CR>
 
 let g:NTon = 0
@@ -52,3 +54,6 @@ nmap <M-f> :Rgrep<CR>
 " A
 execute "set <M-1>=\e1"
 map <M-a> :A<CR>
+
+
+map <F8>  :set filetype=cpp <CR>
