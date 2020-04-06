@@ -10,10 +10,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set wrap
-set cursorline
+"set cursorline
 set hlsearch
 set ignorecase
-set number
+"set number
 
 execute "set <M-p>=\ep"
 nnoremap <M-p> :set invpaste paste?<CR> 
