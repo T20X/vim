@@ -21,6 +21,7 @@ set pastetoggle=<M-p>
 set showmode
 
 map <F2> :retab <CR> :wq! <CR> 
+map <F5> :YcmForceCompileAndDiagnostics <CR>
 map <F6> :make <bar> !./app <CR> 
 map <F7> :make clean <CR> 
 nmap <C-s> :w<CR>
