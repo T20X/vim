@@ -84,8 +84,8 @@ function! LOPENToggle()
     endif
 endfunction
 
-execute "set <M-o>=\eo"
-nmap <M-o> :tselect <CR>
+"execute "set <M-o>=\eo"
+"nmap <M-o> :tselect <CR>
 
 execute "set <M-2>=\e2"
 nmap <M-2> :TagbarToggle<CR>
@@ -103,8 +103,10 @@ endfunction
 
 
 let g:lt_height=2 
-nmap <silent> <C-o> :QFix <CR>
-nmap <silent> <C-i> :LToggle <CR>
+execute "set <M-o>=\eo"
+execute "set <M-i>=\ei"
+nmap <silent> <M-o> :QFix <CR>
+nmap <silent> <M-i> :LToggle <CR>
 au FileType qf call AdjustWindowHeight(3,20)
 function! AdjustWindowHeight(minheight, maxheight)
     exe max([min([line("$"),a:maxheight]), a:minheight]) . "wincmd _" 
