@@ -1,4 +1,5 @@
 execute pathogen#infect('bundle/{}', '~/workdir/vim/bundle/{}')
+set encoding=utf-8
 
 
 syntax on
