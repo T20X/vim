@@ -66,6 +66,12 @@ nmap <M-f> :Rgrep<CR>
 nmap <C-j> :cprev <CR>
 nmap <C-k> :cnext <CR>
 
+
+execute "set <M-j>=\ej"
+execute "set <M-k>=\ek"
+nmap <M-j> :lprev <CR>
+nmap <M-k> :lnext <CR>
+
 " A
 execute "set <M-1>=\e1"
 map <M-a> :A<CR>
@@ -107,6 +113,8 @@ execute "set <M-o>=\eo"
 execute "set <M-i>=\ei"
 nmap <silent> <M-o> :QFix <CR>
 nmap <silent> <M-i> :LToggle <CR>
+nmap <silent> <C-e> :YcmDiags <CR>
+nmap <silent> <C-t> :YcmCompleter GoToDefinition <CR>
 au FileType qf call AdjustWindowHeight(3,20)
 function! AdjustWindowHeight(minheight, maxheight)
     exe max([min([line("$"),a:maxheight]), a:minheight]) . "wincmd _" 
