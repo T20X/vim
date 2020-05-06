@@ -108,7 +108,7 @@ function! QFixToggle(forced)
 endfunction
 
 
-let g:lt_height=2 
+let g:lt_height=10
 execute "set <M-o>=\eo"
 execute "set <M-i>=\ei"
 nmap <silent> <M-o> :QFix <CR>
