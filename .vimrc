@@ -1,4 +1,5 @@
 execute pathogen#infect('bundle/{}', '~/workdir/vim/bundle/{}')
+set encoding=utf-8
 
 
 syntax on
@@ -102,7 +103,9 @@ function! QFixToggle(forced)
 endfunction
 
 
-nmap <silent> <C-i> :QFix <CR>
+let g:lt_height=2 
+nmap <silent> <C-o> :QFix <CR>
+nmap <silent> <C-i> :LToggle <CR>
 au FileType qf call AdjustWindowHeight(3,20)
 function! AdjustWindowHeight(minheight, maxheight)
     exe max([min([line("$"),a:maxheight]), a:minheight]) . "wincmd _" 
