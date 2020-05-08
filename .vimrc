@@ -115,9 +115,11 @@ execute "set <M-i>=\ei"
 nmap <silent> <M-o> :QFix <CR>
 nmap <silent> <M-i> :LToggle <CR>
 nmap <silent> <C-e> :YcmDiags <CR>
-nmap <silent> <C-t> :YcmCompleter GoToDefinition <CR>
+nmap <silent> <C-t> :YcmCompleter GoTo <CR>
 au FileType qf call AdjustWindowHeight(3,20)
 function! AdjustWindowHeight(minheight, maxheight)
     exe max([min([line("$"),a:maxheight]), a:minheight]) . "wincmd _" 
 endfunction
 
+let g:ycm_always_populate_location_list = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
