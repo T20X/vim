@@ -122,4 +122,6 @@ function! AdjustWindowHeight(minheight, maxheight)
 endfunction
 
 let g:ycm_always_populate_location_list = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1 
+let g:ycm_filetype_whitelist = {'cpp': 1, 'h':1, 'cc':1, 'hpp':1}
+
