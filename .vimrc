@@ -1,5 +1,4 @@
 execute pathogen#infect('bundle/{}', '~/workdir/vim/bundle/{}')
-set encoding=utf-8
 
 syntax on
 filetype plugin indent on 
@@ -14,11 +13,16 @@ set wrap
 set hlsearch
 set ignorecase
 "set number
+set foldmethod=indent
+set foldlevel=99
+set encoding=utf-8
 
 execute "set <M-p>=\ep"
 nnoremap <M-p> :set invpaste paste?<CR> 
 set pastetoggle=<M-p>
 set showmode
+
+let python_highlight_all=1
 
 map <F2> :retab <CR> :wq! <CR> 
 map <F5> :YcmForceCompileAndDiagnostics <CR>
@@ -123,7 +127,7 @@ endfunction
 
 let g:ycm_always_populate_location_list = 1
 let g:ycm_autoclose_preview_window_after_completion = 1 
-let g:ycm_filetype_whitelist = {'cpp': 1, 'h':1, 'cc':1, 'hpp':1}
+let g:ycm_filetype_whitelist = {'cpp': 1, 'h':1, 'cc':1, 'hpp':1, 'py':1}
 
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
@@ -134,4 +138,14 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
+"let g:loaded_youcompleteme = 0
+
+au BufNewFile,BufRead *.py 
+    \ set tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
 
